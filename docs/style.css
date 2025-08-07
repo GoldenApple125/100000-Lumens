@@ -19,6 +19,7 @@
     overflow: hidden;
     font-family: "梦源黑体W12_min";
     image-rendering: pixelated;
+    color-scheme: only light;
     transition: all 0.15s;
 }
 
@@ -448,4 +449,5 @@ body {
     font-size: 18px;
     line-height: 25px;
     text-align: center;
+
 }
