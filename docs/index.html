@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN" oncontextmenu="return false">
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+        <title>十万流明</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/javascript" src="main.js"></script>
+        <script type="text/javascript" src="data.js"></script>
+        <script type="text/javascript" src="save.js"></script>
+    </head>
+    <body>
+        <div class="image_bar">
+            <img src="./image/wood.png" alt="wood" class="map_image">
+            <img src="./image/torch.png" alt="torch" class="map_image">
+            <img src="./image/campfire.png" alt="campfire" class="map_image">
+            <img src="./image/charcoal.png" alt="charcoal" class="map_image">
+            <img src="./image/better_torch.png" alt="better_torch" class="map_image">
+            <img src="./image/woodpile.png" alt="woodpile" class="map_image">
+        </div>
+        <div class="normal_screen" id="main_screen">
+            <div class="level_bar">
+                <div class="level_title" id="level_title"><div class="number" id="level_number"></div></div>
+                <div class="level_process"><div class="light_number" id="current_Light"></div><div class="light">流明</div></div>
+                <div class="level_line_back"></div>
+                <div class="level_line_front" id="light_bar"></div>
+                <div class="level_goal" id="level_goal">▲<div class="level_goal_text" id="basic_goal"></div></div>
+            </div>
+            <div class="map_table" id="map_table"></div>
+            <div class="item_bar" id="item_bar"></div>
+            <div class="version_text" id="version_text"></div>
+            <div class="level_up" id="level_up" onclick="levelUp()">◀</div>
+            <div class="level_down" id="level_down" onclick="levelDown()">▶</div>
+            <div class="option_bar">
+                <div class="option" onclick="changeLayer(game.currentOption)"><div style="transform: rotate(45deg);">❖</div></div>
+                <div class="option" onclick="changeLevel(game.currentLevel)">×</div>
+                <div class="option" style="display: none;">?</div>
+            </div>
+        </div>
+        <div class="normal_screen" id="option_screen1">
+            <div class="process_table">
+                <div class="process_bar">
+                    <div class="process_text" id="level_text1"></div>
+                    <div class="process_text" id="level_text2"></div>
+                </div>
+                <div class="process_bar">
+                    <div class="process_button" id="level_button1" onclick="chooseLevel(1)">1</div>
+                    <div class="process_button" id="level_button2" onclick="chooseLevel(2)">2</div>
+                    <div class="process_button" id="level_button3" onclick="chooseLevel(3)">3</div>
+                    <div class="process_button" id="level_button4" onclick="chooseLevel(4)">4</div>
+                    <div class="process_button" id="level_button5" onclick="chooseLevel(5)">5</div>
+                    <div class="process_button" id="level_button6" onclick="chooseLevel(6)">6</div>
+                </div>
+            </div>
+        </div>
+        <div class="normal_screen" id="option_screen2">
+            <div class="setting_table">
+                <div class="setting_text">存档选项</div>
+                <div class="setting_bar">
+                    <div class="setting_button" onclick="importSave()">导入</div>
+                    <div class="setting_button" onclick="exportSave()">导出</div>
+                    <div class="reset_button" id="reset_button" onclick="resetSave()">重置</div>
+                    <input type="file" id="select_file" style="display: none;">
+                </div>
+            </div>
+        </div>
+        <div class="normal_screen" id="option_screen3">
+            <div class="about_text">十万<div class="light">流明</div><br>作者&nbsp;静火Ω<br><br>最近更新<br>0.1.0<br>-初始版本</div>
+        </div>
+        <div id="option_screen">
+            <div class="option_bar">
+                    <div class="option" onclick="changeLayer(0)">⬅</div>
+                </div>
+                <div class="button_bar" id="button_bar">
+                    <div class="button" id="button1" onclick="changeLayer(1)">进度</div>
+                    <div class="button" id="button2" onclick="changeLayer(2)">设置</div>
+                    <div class="button" id="button3" onclick="changeLayer(3)">关于</div>
+            </div>
+        </div>
+        <div class="normal_screen" id="load_screen"><div class="level_title">加载中</div></div>
+    </body>
+    <script>
+        window.onload = () => {
+            load();
+        }
+    </script>
+</html>
