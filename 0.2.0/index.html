@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN" oncontextmenu="return false">
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+        <title>十万流明</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/javascript" src="main.js"></script>
+        <script type="text/javascript" src="data.js"></script>
+        <script type="text/javascript" src="save.js"></script>
+    </head>
+    <body>
+        <div class="normal_page visible" id="load_page">
+            <div class="load_text">加载中</div>
+            <div class="load_bar" id="load_bar">
+                <img src="./image/air.png" alt="air" class="load_image">
+                <img src="./image/branch.png" alt="branch" class="load_image">
+                <img src="./image/flame.png" alt="flame" class="load_image">
+                <img src="./image/wood.png" alt="wood" class="load_image">
+                <img src="./image/resin.png" alt="resin" class="load_image">
+                <img src="./image/torch.png" alt="torch" class="load_image">
+                <img src="./image/woodpile.png" alt="woodpile" class="load_image">
+                <img src="./image/campfire.png" alt="campfire" class="load_image">
+                <img src="./image/copper.png" alt="copper" class="load_image">
+                <img src="./image/oil.png" alt="oil" class="load_image">
+                <img src="./image/hemp_thread.png" alt="hemp_thread" class="load_image">
+                <img src="./image/oil_lamp.png" alt="oil_lamp" class="load_image">
+                <img src="./image/wax.png" alt="wax" class="load_image">
+                <img src="./image/candle.png" alt="candle" class="load_image">
+            </div>
+        </div>
+        <div class="normal_page hidden" id="level_page">
+            <div class="level_button" id="level_setting">设置</div>
+            <div class="level_button" id="level_about">关于</div>
+            <div class="level_table" id="level_table">
+                <div class="level_star button_border" id="level_star"></div>
+            </div>
+        </div>
+        <div class="normal_page hidden" id="game_page">
+            <div class="page_back button_border" id="game_back">◀返回</div>
+            <div class="game_clear button_border" id="game_clear">清空×</div>
+            <div class="game_head">
+                <div class="game_level">
+                    <div class="game_change button_border" id="game_up">⬅</div>
+                    <div class="game_text" id="game_level"></div>
+                    <div class="game_change button_border" id="game_down">➡</div>
+                </div>
+                <div class="game_score">
+                    <div class="game_text"><div class="game_light" id="game_light">0</div>流明</div>
+                </div>
+                <div class="game_score">
+                    <div class="game_star" id="game_star"></div>
+                </div>
+                <div class="game_information" id="game_information"></div>
+            </div>
+            <div class="game_table" id="game_table"></div>
+            <div class="item_bar" id="game_item"></div>
+            <div class="item_information hidden" id="item_information">
+                <div class="item_title" id="item_title"></div>
+                <div class="item_text" id="item_light"></div>
+                <div class="item_text" id="item_text"></div>
+            </div>
+        </div>
+        <div class="normal_page hidden" id="setting_page">
+            <div class="page_back button_border" id="setting_back">◀返回</div>
+            <div class="setting_table">
+                <div class="setting_bar">
+                    <div class="setting_text">画面选项</div>
+                </div>
+                <div class="setting_bar">
+                    <div class="setting_name">突出无框按钮</div>
+                    <div class="setting_button" id="show_border">关闭</div>
+                </div>
+                <div class="setting_bar">
+                    <div class="setting_text">存档选项</div>
+                </div>
+                <div class="setting_bar" id="save_bar">
+                    <div class="setting_button" id="save_import">导入</div>
+                    <div class="setting_button" id="save_export">导出</div>
+                    <div class="setting_button" id="save_reset">重置</div>
+                    <input type="file" class="setting_file" id="save_file">
+                </div>
+            </div>
+        </div>
+        <div class="normal_page hidden" id="about_page">
+            <div class="page_back button_border" id="about_back">◀返回</div>
+            <div class="load_text">
+                <div class="about_title">十万流明</div>
+                <div class="about_version" id="about_version"></div>
+                <div class="about_bar">
+                    <div class="about_information">作者</div>
+                    <div class="about_information">静火Ω</div>
+                </div>
+                <div class="about_text">本作灵感来源于《裂变模拟器》(Fission Simulator)</div>
+            </div>
+        </div>
+    </body>
+    <script>
+        window.onload = () => {
+            startGame();
+        }
+    </script>
+</html>
